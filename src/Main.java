@@ -139,6 +139,18 @@ public class Main extends Application {
             } catch (Exception allE){
 
             }
+            currentOn = null;
+            content.setText("");
+            datePicker.setValue(null);
+            checkDone.setSelected(false);
+            try {
+                if (checkDone.isSelected())
+                    checkDone.setGraphic(new ImageView(new Image(new FileInputStream("Assets/check.png"), 30, 30, false, false)));
+                else
+                    checkDone.setGraphic(new ImageView(new Image(new FileInputStream("Assets/unCheck.png"), 30, 30, false, false)));
+            } catch (IOException ioe) {
+
+            }
             readFiles();
             try {
                 scene = LayoutCreation.layout(topBar, createTitleButtons(), content, leftBar);
@@ -157,6 +169,14 @@ public class Main extends Application {
             content.setText("");
             datePicker.setValue(null);
             checkDone.setSelected(false);
+            try {
+                if (checkDone.isSelected())
+                    checkDone.setGraphic(new ImageView(new Image(new FileInputStream("Assets/check.png"), 30, 30, false, false)));
+                else
+                    checkDone.setGraphic(new ImageView(new Image(new FileInputStream("Assets/unCheck.png"), 30, 30, false, false)));
+            } catch (IOException ioe) {
+
+            }
             readFiles();
             try {
                 scene = LayoutCreation.layout(topBar, createTitleButtons(), content, leftBar);
@@ -176,6 +196,10 @@ public class Main extends Application {
                 content.setText("");
                 datePicker.setValue(null);
                 checkDone.setSelected(false);
+                if (checkDone.isSelected())
+                    checkDone.setGraphic(new ImageView(new Image(new FileInputStream("Assets/check.png"), 30, 30, false, false)));
+                else
+                    checkDone.setGraphic(new ImageView(new Image(new FileInputStream("Assets/unCheck.png"), 30, 30, false, false)));
             } catch (IOException ioe) {
 
             }
@@ -269,7 +293,7 @@ public class Main extends Application {
             String date = n.getReminderDate();
             if (!date.equalsIgnoreCase("X")) {
                 button = new ToggleButton(date + "\n" + title);
-                if (!LocalDate.now().isBefore(LocalDate.parse(date))) {
+                if (!LocalDate.now().isBefore(LocalDate.parse(date)) && !n.isDone()) {
                     try {
                         button.setGraphic(new ImageView(new Image(new FileInputStream("Assets/notification.png"))));
                     } catch (IOException ioe) {
@@ -292,7 +316,17 @@ public class Main extends Application {
                 content.setText(memory.getContent());
                 if (!memory.getReminderDate().equalsIgnoreCase("X"))
                     datePicker.setValue(LocalDate.parse(memory.getReminderDate()));
+                else
+                    datePicker.setValue(null);
                 checkDone.setSelected(memory.isDone());
+                try {
+                    if (checkDone.isSelected())
+                        checkDone.setGraphic(new ImageView(new Image(new FileInputStream("Assets/check.png"), 30, 30, false, false)));
+                    else
+                        checkDone.setGraphic(new ImageView(new Image(new FileInputStream("Assets/unCheck.png"), 30, 30, false, false)));
+                } catch (IOException ioe) {
+
+                }
                 for (ToggleButton B : titleButtons)
                     B.setSelected(false);
                 b.setSelected(true);
