@@ -1,0 +1,92 @@
+.root{
+    -fx-background-color: #393939;
+}
+
+.date-picker {
+    -fx-border-color: transparent;
+    -fx-min-height: 27;
+    -fx-max-height: 27;
+}
+
+#checkDone {
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+#topBar {
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #505050;
+}
+
+#topBar Button{
+    -fx-min-height: 30;
+    -fx-max-height: 30;
+    -fx-background-color: #393939;
+    -fx-background-radius: 0, 0, 0, 0;
+}
+
+#topBar Button:hover {
+    -fx-background-color: #262626;
+}
+
+#bottomSection {
+    -fx-border-width: 1 0 0 0;
+    -fx-border-color: #505050;
+}
+
+.text-area {
+    -fx-min-width: 625;
+    -fx-max-width: 625;
+    -fx-min-height: 556;
+    -fx-background-radius: 0, 0, 0, 0;
+    -fx-border-radius: 0, 0, 0, 0;
+    -fx-border-width: 0 0 0 2;
+    -fx-border-color: #505050;
+    -fx-background-color: #393939;
+    -fx-control-inner-background: #393939;
+}
+
+.text-area:focused {
+    -fx-focus-color: transparent;
+}
+
+#titleColumn {
+    -fx-background-color: #262626;
+    -fx-border-width: 0 0 0 1;
+    -fx-border-color: #505050;
+}
+
+.titleButtons {
+    -fx-min-width: 300;
+    -fx-max-width: 300;
+    -fx-min-height: 85;
+    -fx-max-height: 85;
+    -fx-text-fill: white;
+    -fx-background-radius: 0, 0, 0, 0;
+    -fx-background-color: #262626;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #505050;
+}
+
+.titleButtons:selected {
+    -fx-background-color: #ad8f2e;
+}
+
+.leftBarButton {
+    -fx-min-width: 75;
+    -fx-max-width: 75;
+    -fx-min-height: 278;
+    -fx-max-height: 278;
+    -fx-background-color: #393939;
+    -fx-background-radius: 0, 0, 0, 0;
+    -fx-border-width: 0 1 0 0;
+    -fx-border-color: #505050;
+}
+
+.leftBarButton:selected {
+    -fx-background-color: #262626;
+}
+
+#toCalendar {
+    -fx-border-width: 1 1 0 0;
+}

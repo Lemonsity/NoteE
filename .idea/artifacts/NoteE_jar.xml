@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="NoteE:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/NoteE_jar</output-path>
+    <root id="archive" name="NoteE.jar">
+      <element id="module-output" name="NoteE" />
+    </root>
+  </artifact>
+</component>

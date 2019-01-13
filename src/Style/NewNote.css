@@ -1,0 +1,25 @@
+.root {
+    -fx-background-color: #393939;
+}
+#contentField {
+    -fx-text-box-border: transparent;
+}
+#contentField:focused {
+    -fx-text-box-border: transparent;
+}
+
+.text-area {
+    -fx-min-height: 450;
+    -fx-control-inner-background: #262626;
+}
+
+.button {
+    -fx-min-width: 195;
+    -fx-min-height: 50;
+    -fx-background-radius: 0;
+    -fx-background-color: #262626;
+}
+
+.button:hover {
+    -fx-background-colo: #262626;
+}
