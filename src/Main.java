@@ -162,56 +162,60 @@ public class Main extends Application {
             stage.show();
         });
         delete.setOnAction(e -> {
-            File file = new File("Data" + File.separator + currentOn + ".txt");
-            file.delete();
-            notes.remove(currentOn);
-            currentOn = null;
-            content.setText("");
-            datePicker.setValue(null);
-            checkDone.setSelected(false);
-            try {
-                if (checkDone.isSelected())
-                    checkDone.setGraphic(new ImageView(new Image(new FileInputStream("Assets/check.png"), 30, 30, false, false)));
-                else
-                    checkDone.setGraphic(new ImageView(new Image(new FileInputStream("Assets/unCheck.png"), 30, 30, false, false)));
-            } catch (IOException ioe) {
-
-            }
-            readFiles();
-            try {
-                scene = LayoutCreation.layout(topBar, createTitleButtons(), content, leftBar);
-            } catch (Exception ex) {
-
-            }
-            scene.getStylesheets().add("Style/MainPage.css");
-            stage.setScene(scene);
-            stage.show();
-        });
-        save.setOnAction(e -> {
-            try {
+            if (currentOn != null) {
                 File file = new File("Data" + File.separator + currentOn + ".txt");
                 file.delete();
+                notes.remove(currentOn);
                 currentOn = null;
-                Note temp = new Note(content.getText(), datePicker.getValue(), checkDone.isSelected());
                 content.setText("");
                 datePicker.setValue(null);
                 checkDone.setSelected(false);
-                if (checkDone.isSelected())
-                    checkDone.setGraphic(new ImageView(new Image(new FileInputStream("Assets/check.png"), 30, 30, false, false)));
-                else
-                    checkDone.setGraphic(new ImageView(new Image(new FileInputStream("Assets/unCheck.png"), 30, 30, false, false)));
-            } catch (IOException ioe) {
+                try {
+                    if (checkDone.isSelected())
+                        checkDone.setGraphic(new ImageView(new Image(new FileInputStream("Assets/check.png"), 30, 30, false, false)));
+                    else
+                        checkDone.setGraphic(new ImageView(new Image(new FileInputStream("Assets/unCheck.png"), 30, 30, false, false)));
+                } catch (IOException ioe) {
 
-            }
-            readFiles();
-            try {
-                scene = LayoutCreation.layout(topBar, createTitleButtons(), content, leftBar);
-            } catch (Exception ex) {
+                }
+                readFiles();
+                try {
+                    scene = LayoutCreation.layout(topBar, createTitleButtons(), content, leftBar);
+                } catch (Exception ex) {
 
+                }
+                scene.getStylesheets().add("Style/MainPage.css");
+                stage.setScene(scene);
+                stage.show();
             }
-            scene.getStylesheets().add("Style/MainPage.css");
-            stage.setScene(scene);
-            stage.show();
+        });
+        save.setOnAction(e -> {
+            if (currentOn != null) {
+                try {
+                    File file = new File("Data" + File.separator + currentOn + ".txt");
+                    file.delete();
+                    currentOn = null;
+                    Note temp = new Note(content.getText(), datePicker.getValue(), checkDone.isSelected());
+                    content.setText("");
+                    datePicker.setValue(null);
+                    checkDone.setSelected(false);
+                    if (checkDone.isSelected())
+                        checkDone.setGraphic(new ImageView(new Image(new FileInputStream("Assets/check.png"), 30, 30, false, false)));
+                    else
+                        checkDone.setGraphic(new ImageView(new Image(new FileInputStream("Assets/unCheck.png"), 30, 30, false, false)));
+                } catch (IOException ioe) {
+
+                }
+                readFiles();
+                try {
+                    scene = LayoutCreation.layout(topBar, createTitleButtons(), content, leftBar);
+                } catch (Exception ex) {
+
+                }
+                scene.getStylesheets().add("Style/MainPage.css");
+                stage.setScene(scene);
+                stage.show();
+            }
         });
         checkDone.setOnAction(e -> {
             try {
