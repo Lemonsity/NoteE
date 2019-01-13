@@ -252,7 +252,7 @@ public class Main extends Application {
                 String content = "";
                 String date;
                 String done;
-                if (!file.getName().equals(".DS_Store")) {
+                if (!file.getName().equals(".DS_Store") && !file.getName().equals("format.txt")) {
                     FileReader fr = new FileReader("Data" + File.separator + file.getName());
                     BufferedReader br = new BufferedReader(fr);
                     lastEdited = br.readLine();
