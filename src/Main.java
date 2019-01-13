@@ -115,7 +115,7 @@ public class Main extends Application {
         topBar.setAlignment(Pos.CENTER);
 
         leftBar = new VBox();
-        leftBar.getChildren().addAll(toNote, toCalendar);
+        leftBar.getChildren().addAll(toNote);
 
         bottomSection = new HBox();
         bottomSection.setId("bottomSection");
@@ -289,6 +289,8 @@ public class Main extends Application {
                     break;
                 title += n.getContent().charAt(i);
             }
+            if (n.getContent().length() >= 20)
+                title += "...";
             ToggleButton button;
             String date = n.getReminderDate();
             if (!date.equalsIgnoreCase("X")) {

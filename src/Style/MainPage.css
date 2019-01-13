@@ -75,8 +75,8 @@
 .leftBarButton {
     -fx-min-width: 75;
     -fx-max-width: 75;
-    -fx-min-height: 278;
-    -fx-max-height: 278;
+    -fx-min-height: 556;
+    -fx-max-height: 556;
     -fx-background-color: #393939;
     -fx-background-radius: 0, 0, 0, 0;
     -fx-border-width: 0 1 0 0;
